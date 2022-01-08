@@ -7,5 +7,5 @@
 #if defined(__linux__)
 #include <notifier/linux/notif.hpp>
 #elif defined(_WIN32)
-//TODO
+#include <notifier/windows/notif.hpp>
 #endif

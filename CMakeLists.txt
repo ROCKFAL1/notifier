@@ -22,6 +22,7 @@ target_include_directories(notifier SYSTEM PUBLIC ${GLIB_INCLUDE_DIRS} ${LibNoti
 
 endif()
 
+target_include_directories(notifier SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(notifier SYSTEM PUBLIC "include")
 
 

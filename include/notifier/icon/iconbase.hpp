@@ -2,7 +2,9 @@
 
 #include <notifier/icon/sysicon.hpp>
 
-#if defined(_WIN32)
+#if defined(__linux__)
+#include <iostream>
+#elif defined(_WIN32)
 #include <windows.h>
 #endif
 

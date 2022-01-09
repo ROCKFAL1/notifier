@@ -4,7 +4,7 @@
 #include <chrono>
 
 #if defined(__linux__)
-//TODO
+#include <notifier/linux/icon.hpp>
 #elif defined(_WIN32)
 #include <notifier/windows/icon.hpp>
 #endif

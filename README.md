@@ -47,6 +47,6 @@ In the second case, you can call any of these methods
 ```
 
 # Todo
-1) System icons near notifications
+1) System icons near notifications :white_check_mark: 
 2) Custom icons near notification
 

@@ -45,7 +45,9 @@ void Notif::Invoke()
     memset(&notifData, 0, sizeof(NOTIFYICONDATA));
     notifData.cbSize = sizeof(NOTIFYICONDATA);
     notifData.hWnd = _hwnd;
+    notifData.dwInfoFlags = _icon.Get().flags;
     notifData.uFlags = NIF_INFO;
+    notifData.hBalloonIcon = _icon.Get().hIcon;
      
     strcpy_s(notifData.szInfoTitle, this->_header.c_str());
     strcpy_s(notifData.szInfo, this->_body.c_str());
@@ -61,6 +63,5 @@ LRESULT CALLBACK Notif::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
 {
     return DefWindowProc(hwnd, msg, wParam, lParam);
 }
-
 
 #endif

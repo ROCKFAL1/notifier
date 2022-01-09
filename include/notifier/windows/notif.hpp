@@ -1,13 +1,12 @@
 #pragma once 
 #if defined(_WIN32)
 
-#include <notifier/notifbase.hpp>
-
 #include <windows.h>
+
+#include <notifier/notifbase.hpp>
 
 namespace notifier
 {
-
     class Notif final : public NotifBase
     {
     public:
@@ -25,6 +24,6 @@ namespace notifier
         friend class NotifBuilder;
     };
 
-}
+} //namespace notifier
 
 #endif

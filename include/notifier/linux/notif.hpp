@@ -5,7 +5,6 @@
 
 namespace notifier
 {
-
     class Notif final : public NotifBase
     {
     public:
@@ -17,6 +16,6 @@ namespace notifier
         friend class NotifBuilder;
     };
 
-} //namespace notifier1
+} //namespace notifier
 
 #endif

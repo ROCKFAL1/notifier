@@ -1,11 +1,13 @@
 #pragma once
 
-#include <notifier/notifbase.hpp>
 #include <notifier/notifbuilder.hpp>
 #include <notifier/defferednotif.hpp>
+#include <notifier/icon/sysicon.hpp>
 
 #if defined(__linux__)
 #include <notifier/linux/notif.hpp>
+#include <notifier/linux/icon.hpp>
 #elif defined(_WIN32)
 #include <notifier/windows/notif.hpp>
+#include <notifier/windows/icon.hpp>
 #endif

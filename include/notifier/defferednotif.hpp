@@ -60,4 +60,4 @@ namespace notifier
         friend class NotifBase;
     };
 
-} //namespace notifier1
+} //namespace notifier

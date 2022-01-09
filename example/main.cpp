@@ -5,14 +5,16 @@
 #include <notifier/notifier.hpp>
 
 using namespace std::chrono_literals;
+using namespace notifier;
 
 int main() {
     
-    notifier::NotifBuilder builder;
+    NotifBuilder builder;
 
     {
         builder.SetBody("Body");
         builder.SetHeader("Header");
+        builder.SetIcon(SysIcon::Info);
         builder.Build()->InvokeDeffered(3s).Await();
     }
 
@@ -25,7 +27,11 @@ int main() {
     }
 
     {
-        auto notif = builder.SetBody("Body_3").SetHeader("Header_3").Build();
+        auto notif = builder
+                    .SetBody("Body_3")
+                    .SetHeader("Header_3")
+                    .SetIcon(SysIcon::Warning)
+                    .Build();
         notif->InvokeDeffered(5s);
         
     }

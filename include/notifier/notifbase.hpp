@@ -3,6 +3,12 @@
 #include <string>
 #include <chrono>
 
+#if defined(__linux__)
+//TODO
+#elif defined(_WIN32)
+#include <notifier/windows/icon.hpp>
+#endif
+
 namespace notifier
 {
     class DefferedNotif;
@@ -19,5 +25,8 @@ namespace notifier
     protected:
         std::string _header;
         std::string _body;
+        Icon _icon;
+
+        friend class NotifBuilder;
     };
-} //namespace notifier1
+} //namespace notifier

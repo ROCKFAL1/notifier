@@ -30,6 +30,28 @@ builder.SetBody("Body");
 auto notif = builder.Build();
 
 ```
+You also can set icon from system to your notification
+```cpp
+enum class SysIcon
+{
+        None,
+        Info,
+        Warning,
+        Error
+};
+```
+```cpp
+builder.SetIcon(/* some instance of SysIcon */);
+//or
+builder.SetIcon(/* some instance of Icon */);
+
+//for example
+builder.SetIcon(SysIcon::Info);
+//or
+Icon icon(SysIcon::Info);
+builder.SetIcon(icon);
+```
+
 Next, you can trigger the notification in two different ways
 ```cpp
 //first way
@@ -41,9 +63,9 @@ auto defferedNotif = notif->InvokeDeffered(/*Some std::chrono::duration argument
 
 In the second case, you can call any of these methods   
 ```cpp
-        void DefferedNotif::Await(); //Suspend execution of the main thread until the notification is called
-        void DefferedNotif::Cancel(); //Cancels the notification call
-        seconds_t DefferedNotif::RemainingTimeToInvoke() const; //Returns the remaining time before the call
+void DefferedNotif::Await(); //Suspend execution of the main thread until the notification is called
+void DefferedNotif::Cancel(); //Cancels the notification call
+seconds_t DefferedNotif::RemainingTimeToInvoke() const; //Returns the remaining time before the call
 ```
 
 # Todo

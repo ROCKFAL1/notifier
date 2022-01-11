@@ -17,7 +17,7 @@ namespace notifier
     class DefferedNotif
     {
     public:
-        using seconds_t = std::chrono::duration<float>;
+        using Seconds_t = std::chrono::duration<float>;
 
         DefferedNotif(NotifBase* notifBasePtr,
                       std::chrono::seconds timeToInvoke)
@@ -44,7 +44,7 @@ namespace notifier
 
         void Await();
         void Cancel();
-        seconds_t RemainingTimeToInvoke() const;
+        Seconds_t RemainingTimeToInvoke() const;
 
     private:
         struct Fields

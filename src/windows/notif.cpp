@@ -6,7 +6,7 @@
 
 using namespace notifier;
 
-utils::uid uid;
+utils::Uid uid;
 
 Notif::Notif()
     : NotifBase()

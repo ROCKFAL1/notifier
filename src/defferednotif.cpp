@@ -21,7 +21,7 @@ void DefferedNotif::Cancel()
     _fields->Cv.notify_all();
 }
 
-DefferedNotif::seconds_t DefferedNotif::RemainingTimeToInvoke() const
+DefferedNotif::Seconds_t DefferedNotif::RemainingTimeToInvoke() const
 {
     const auto time = _fields->InvokeTime - std::chrono::system_clock::now();
     return  time.count() > 0 ? time : std::chrono::seconds(0);

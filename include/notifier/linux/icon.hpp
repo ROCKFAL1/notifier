@@ -1,5 +1,5 @@
 #pragma once
-#if defined(_WIN32)
+#if defined(__linux__)
 
 #include <notifier/icon/iconbase.hpp>
 
@@ -7,10 +7,11 @@ namespace notifier
 {
     class Icon final : public IconBase
     {
-    public:    
+    public:
         Icon() {};
         Icon(SysIcon sysIcon);
         ~Icon() override {};
+
     };
 }
 

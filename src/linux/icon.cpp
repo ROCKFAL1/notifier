@@ -1,25 +1,24 @@
-#if defined(_WIN32)
-#include <notifier/windows/icon.hpp>
+#if defined(__linux__)
+#include <notifier/linux/icon.hpp>
 
 #include <stdexcept>
 
 using namespace notifier;
-
 Icon::Icon(SysIcon sysIcon)
 {
     switch (sysIcon)
     {
         case SysIcon::None:
-            _icon.flags |= NIIF_NONE;
+            _icon = nullptr;
             break;
         case SysIcon::Info:
-            _icon.flags |= NIIF_INFO;
+            _icon = "dialog-information";
             break;
         case SysIcon::Warning:
-            _icon.flags |= NIIF_WARNING;
+            _icon = "dialog-warning";
             break;
         case SysIcon::Error:
-            _icon.flags |= NIIF_ERROR;
+            _icon = "dialog-error";
             break;
         default:
             throw std::runtime_error("Unknown value of sysIcon argument");

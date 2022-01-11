@@ -6,6 +6,7 @@
 
 #if defined(__linux__)
 #include <notifier/linux/notif.hpp>
+#include <notifier/linux/icon.hpp>
 #elif defined(_WIN32)
 #include <notifier/windows/notif.hpp>
 #include <notifier/windows/icon.hpp>
